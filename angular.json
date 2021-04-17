@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tobythe-dev",
+            "outputPath": "dist/tobythe-dev/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -90,7 +90,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json", "tsconfig.server.json"],
             "exclude": ["**/node_modules/**"]
           }
         },
@@ -105,9 +105,57 @@
               "devServerTarget": "tobythe-dev:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/tobythe-dev/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "tobythe-dev:build",
+            "serverTarget": "tobythe-dev:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "tobythe-dev:build:production",
+              "serverTarget": "tobythe-dev:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "tobythe-dev:build:production",
+            "serverTarget": "tobythe-dev:server:production",
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
     }
   },
-  "defaultProject": "tobythe-dev"
+  "defaultProject": "tobythe-dev",
+  "cli": {
+    "analytics": false
+  }
 }
