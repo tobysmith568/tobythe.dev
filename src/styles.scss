@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: content-box;
+  outline: none;
+  font-family: verdana;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: x-large;
+  background-color: #1351ee;
+  background-image: url("/assets/background.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+@media (max-width: 1000px) {
+  body {
+    font-size: large;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    font-size: medium;
+  }
+}
