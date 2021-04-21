@@ -26,3 +26,8 @@ body {
     font-size: medium;
   }
 }
+@media (max-width: 350px) {
+  body {
+    font-size: small;
+  }
+}

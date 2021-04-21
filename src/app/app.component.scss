@@ -1,6 +1,4 @@
 $blue: #0074c1;
-// $blue: #1e73be;
-// $blue: #2e40ab;
 
 .main {
   display: flex;
@@ -11,6 +9,8 @@ $blue: #0074c1;
 
 .content-wrapper {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
@@ -18,7 +18,7 @@ $blue: #0074c1;
   align-content: center;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  flex-grow: 1;
 }
 
 @media (max-width: 425px) {
@@ -27,7 +27,20 @@ $blue: #0074c1;
   }
 }
 
+.header {
+  padding: 0 4em;
+}
+
 .title {
+  font-size: 2em;
+  margin-top: 4em;
+  color: #0074c1;
+}
+
+.subtitle {
+  font-size: 0.8em;
+  margin-top: 1em;
+  color: #0074c1;
 }
 
 .item {
@@ -66,43 +79,36 @@ $blue: #0074c1;
   font-size: 1em;
 }
 
-.wave {
-  position: absolute;
-  bottom: -85px;
-  z-index: -1;
-}
-@media (max-width: 1000px) {
-  .wave {
-    bottom: -75px;
-  }
-}
-@media (max-width: 800px) {
-  .wave {
-    bottom: -40px;
-  }
-}
-@media (max-width: 640px) {
-  .wave {
-    bottom: -20px;
-  }
-}
-@media (max-width: 550px) {
-  .wave {
-    bottom: -0px;
-  }
-}
-
-.wave-shape {
-  fill: $blue;
-}
-
 .email-wrapper {
-  margin: 1.5em 0px;
+  padding: 1.5em 0px;
+  background-image: url(/assets/wave.svg);
+  background-position: center bottom;
+  background-size: 1440px 126px;
+  background-repeat: repeat-x;
 }
 @media (max-width: 425px) {
   .email-wrapper {
     margin: 15px 0px;
   }
+}
+
+.wave-wrapper {
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.wave-svg {
+  height: 100%;
+  width: 100%;
+}
+
+.wave {
+  stroke: none;
+  fill: $blue;
 }
 
 .email {
