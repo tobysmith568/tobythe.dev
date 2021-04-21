@@ -1,7 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: content-box;
+  box-sizing: border-box;
   outline: none;
   font-family: verdana;
 }
@@ -14,10 +14,7 @@ body {
 
 body {
   font-size: x-large;
-  background-color: #1351ee;
-  background-image: url("/assets/background.svg");
-  background-attachment: fixed;
-  background-size: cover;
+  overflow: hidden;
 }
 @media (max-width: 1000px) {
   body {

@@ -1,3 +1,7 @@
+$blue: #0074c1;
+// $blue: #1e73be;
+// $blue: #2e40ab;
+
 .main {
   display: flex;
   flex-direction: column;
@@ -10,60 +14,99 @@
 }
 
 .content {
-  max-width: 1200px;
-  height: 100%;
-  margin: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  align-content: center;
+  justify-content: center;
   align-items: center;
+  height: 100%;
+}
+
+@media (max-width: 425px) {
+  .content {
+    flex-direction: column;
+  }
 }
 
 .title {
-  text-align: center;
-  font-size: 2.5em;
-  margin: 1em;
-  margin-top: 1.5em;
 }
 
 .item {
-  width: clamp(10vw, 50%, 15vw);
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10%;
+  display: flex;
+  flex-direction: row;
   text-decoration: none;
-  color: black;
+  transition: all 0.05s ease-in;
+  padding: 0.75em;
+  margin: 1em 2em;
+  width: 10em;
+  align-items: center;
+  color: $blue;
+  border: 2px $blue solid;
+  border-radius: 8px;
 
   &:hover {
-    .logo {
-      transform: scale(1.05);
+    color: white;
+    background-color: $blue;
+
+    .icon {
+      fill: white;
     }
   }
 }
 
+.icon {
+  fill: $blue;
+}
+
 .logo {
-  width: 100%;
-  max-width: 225px;
-  transition: all 0.1s ease-in-out;
+  height: 1.5em;
 }
 
 .label {
-  font-size: 1.5em;
-  margin-top: 0.6em;
+  flex-grow: 1;
+  font-size: 1em;
 }
 
 .wave {
   position: absolute;
-  bottom: 0;
+  bottom: -85px;
   z-index: -1;
+}
+@media (max-width: 1000px) {
+  .wave {
+    bottom: -75px;
+  }
+}
+@media (max-width: 800px) {
+  .wave {
+    bottom: -40px;
+  }
+}
+@media (max-width: 640px) {
+  .wave {
+    bottom: -20px;
+  }
+}
+@media (max-width: 550px) {
+  .wave {
+    bottom: -0px;
+  }
+}
+
+.wave-shape {
+  fill: $blue;
 }
 
 .email-wrapper {
-  margin: 35px 0px;
+  margin: 1.5em 0px;
+}
+@media (max-width: 425px) {
+  .email-wrapper {
+    margin: 15px 0px;
+  }
 }
 
 .email {
-  color: #585858;
+  color: white;
   text-decoration: none;
   font-size: 0.8em;
 
