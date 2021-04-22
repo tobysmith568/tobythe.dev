@@ -24,11 +24,15 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
               {
-                "glob": "robots.txt",
+                "glob": "**",
                 "input": "src/assets",
+                "output": "./assets",
+                "ignore": ["__root__/**"]
+              },
+              {
+                "glob": "**",
+                "input": "src/assets/__root__",
                 "output": "./"
               }
             ],
