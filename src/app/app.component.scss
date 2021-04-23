@@ -27,20 +27,23 @@ $blue: #0074c1;
   }
 }
 
-.header {
-  padding: 0 4em;
-}
-
 .title {
-  font-size: 2em;
+  color: $blue;
+  font-weight: normal;
   margin-top: 4em;
-  color: #0074c1;
 }
 
 .subtitle {
   font-size: 0.8em;
+  color: $blue;
+  margin: 0 4em;
   margin-top: 1em;
-  color: #0074c1;
+}
+
+@media (max-width: 450px) {
+  .subtitle {
+    margin: 1em 2em 0 2em;
+  }
 }
 
 .item {
