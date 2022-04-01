@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "tobythe.dev",
+  "version": "0.0.0",
+  "author": {
+    "name": "Toby Smith",
+    "email": "tobysmith568@hotmail.co.uk",
+    "url": "https://tobysmith.uk"
+  },
+  "license": "UNLICENSED",
+  "description": "The domain used by Toby Smith to host his side-projects, things, and bits!",
+  "prettier": "@tobysmith568/prettier-config",
+  "homepage": "https://github.com/tobysmith568/tobythe.dev#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobysmith568/tobythe.dev.git"
+  },
+  "scripts": {
+    "e2e": "cypress open"
+  },
+  "bugs": {
+    "url": "https://github.com/tobysmith568/tobythe.dev/issues"
+  },
+  "devDependencies": {
+    "@tobysmith568/prettier-config": "^2.0.0",
+    "cspell": "^5.19.5",
+    "cypress": "^9.5.3",
+    "jest": "^27.5.1",
+    "typescript": "^4.6.3"
+  }
+}
