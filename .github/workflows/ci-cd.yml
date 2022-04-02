@@ -53,7 +53,7 @@ jobs:
 
     environment:
       name: Production
-      url: ${{ secrets.PROD_URL }}
+      url: https://tobythe.dev
 
     runs-on: ubuntu-latest
 
