@@ -35,7 +35,7 @@ jobs:
           browser: chrome
           install-command: npm ci
           build: docker build . -t ci-build-image
-          start: docker run --rm -it -p 8080:80 ci-build-image
+          start: docker run --rm -p 8080:80 ci-build-image
           wait-on: http://localhost:8080
 
       - uses: fossas/fossa-action@v1.1.0
