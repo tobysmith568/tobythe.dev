@@ -11,9 +11,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env:
-      IMAGE_NAME: build-image-${{ github.run_attempt }}
-
     steps:
       - uses: actions/checkout@v3
 
@@ -37,8 +34,8 @@ jobs:
         with:
           browser: chrome
           install-command: npm ci
-          build: docker build . -t $IMAGE_NAME
-          start: docker run --rm -it -p 8080:80 $IMAGE_NAME
+          build: docker build . -t ci-build-image
+          start: docker run --rm -it -p 8080:80 ci-build-image
           wait-on: http://localhost:8080
 
       - uses: fossas/fossa-action@v1.1.0
