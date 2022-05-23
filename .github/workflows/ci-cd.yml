@@ -29,6 +29,9 @@ jobs:
       - name: Run Prettier
         run: npx prettier --check .
 
+      - name: Run CSpell
+        run: npx cspell **/*.*
+
       - name: Run E2E Tests
         uses: cypress-io/github-action@v2
         with:

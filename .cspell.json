@@ -3,9 +3,9 @@
   "version": "0.2",
   "ignorePaths": [],
   "dictionaryDefinitions": [],
-  "dictionaries": [],
+  "dictionaries": ["en-gb", "fullstack"],
   "words": [],
-  "ignoreWords": ["tobysmith", "tobythe"],
+  "ignoreWords": ["tobysmith", "tobythe", "browserconfig", "mstile"],
   "import": [],
   "ignoreRegExpList": []
 }
