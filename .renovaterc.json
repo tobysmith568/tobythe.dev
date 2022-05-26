@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>tobysmith568/renovate-config"],
+  "packageRules": [
+    {
+      "groupName": "automerge",
+      "matchPackagePatterns": ["nginx"],
+      "automerge": true
+    }
+  ]
+}
