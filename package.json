@@ -16,6 +16,8 @@
     "url": "git+https://github.com/tobysmith568/tobythe.dev.git"
   },
   "scripts": {
+    "build": "docker build -t tobythe.dev .",
+    "start": "docker run --rm -p 8080:80 -it tobythe.dev",
     "e2e": "cypress open"
   },
   "bugs": {
@@ -26,7 +28,7 @@
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "cspell": "^6.0.0",
-    "cypress": "^10.0.0",
+    "cypress": "^10.1.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "jest": "^28.0.0",
