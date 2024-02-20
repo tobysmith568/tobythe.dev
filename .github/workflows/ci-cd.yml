@@ -46,7 +46,7 @@ jobs:
           start: docker run --rm -p 8080:80 ci-build-image
           wait-on: http://localhost:8080
 
-      - uses: fossas/fossa-action@v1.3.1
+      - uses: fossas/fossa-action@v1.3.3
         with:
           api-key: ${{ secrets.FOSSA_API_KEY }}
 
