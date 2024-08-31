@@ -25,7 +25,7 @@
     "url": "https://github.com/tobysmith568/tobythe.dev/issues"
   },
   "devDependencies": {
-    "@tobysmith568/prettier-config": "^2.0.0",
+    "@tobysmith568/prettier-config": "^2.2.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "cspell": "^8.0.0",
