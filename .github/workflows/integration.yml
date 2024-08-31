@@ -1,0 +1,93 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - renovate/*
+  pull_request:
+    branches:
+      - main
+      - "!renovate/*"
+  workflow_call:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  lint:
+    name: Lint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: tobysmith568/actions/.github/actions/checkout-pnpm-project@main
+
+      - name: Run ESLint
+        run: pnpm exec eslint . --max-warnings 0
+
+      - name: Run Prettier
+        run: pnpm exec prettier --check .
+
+  licenses:
+    name: Check Licenses
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: tobysmith568/actions/.github/actions/checkout-pnpm-project@main
+
+      - name: Check Licenses
+        run: pnpm exec license-cop
+
+  build:
+    name: Build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build
+          path: ./src
+          retention-days: 1
+          if-no-files-found: error
+
+      - name: Upload GitHub Pages Build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./src
+
+  test:
+    name: Test (${{ matrix.browser.name }})
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - build
+
+    strategy:
+      fail-fast: false
+      matrix:
+        browser:
+          - name: Chrome
+            value: chrome
+          - name: Firefox
+            value: firefox
+
+    steps:
+      - name: Checkout
+        uses: tobysmith568/actions/.github/actions/checkout-pnpm-project@main
+
+      - name: Run E2E Tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: ${{ matrix.browser.value }}
+          start: npm start
+          wait-on: http://localhost:8080

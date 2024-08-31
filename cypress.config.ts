@@ -13,9 +13,6 @@ export default defineConfig({
     supportFile: "e2e/support/e2e.ts",
     specPattern: "e2e/**/*.spec.ts",
 
-    defaultCommandTimeout: 6000,
-    chromeWebSecurity: false,
-
     setupNodeEvents(on, config) {
       on;
       config;

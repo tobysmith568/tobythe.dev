@@ -1,0 +1,38 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: pwsh
+
+concurrency:
+  group: Continuous Deployment
+  cancel-in-progress: false
+
+jobs:
+  integration:
+    name: Run Continuous Integration
+    uses: ./.github/workflows/integration.yml
+    secrets: inherit
+
+  deploy:
+    name: Deploy Website
+
+    needs:
+      - integration
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
