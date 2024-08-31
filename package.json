@@ -17,22 +17,23 @@
     "url": "git+https://github.com/tobysmith568/tobythe.dev.git"
   },
   "scripts": {
-    "build": "docker build -t tobythe.dev .",
-    "start": "docker run --rm -p 8080:80 -it tobythe.dev",
+    "start": "serve --config ./.serve.json -p 8080 --single",
     "e2e": "cypress open"
   },
   "bugs": {
     "url": "https://github.com/tobysmith568/tobythe.dev/issues"
   },
   "devDependencies": {
-    "@tobysmith568/prettier-config": "^2.2.0",
+    "@license-cop/permissive": "^1.6.2",
+    "@tobysmith568/prettier-config": "^2.2.1",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "cspell": "^8.0.0",
-    "cypress": "^13.0.0",
-    "eslint": "^8.12.0",
+    "cypress": "^13.14.1",
+    "eslint": "^8.13.0",
     "eslint-config-prettier": "^9.0.0",
-    "jest": "^29.0.0",
+    "license-cop": "^1.6.2",
+    "serve": "^14.2.3",
     "typescript": "^5.0.0"
   }
 }
