@@ -24,16 +24,13 @@
     "url": "https://github.com/tobysmith568/tobythe.dev/issues"
   },
   "devDependencies": {
-    "@license-cop/permissive": "^1.6.2",
+    "@license-cop/permissive": "^1.8.0",
+    "@tobysmith568/eslint-config": "^2.3.0",
     "@tobysmith568/prettier-config": "^2.2.1",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "cspell": "^8.0.0",
-    "cypress": "^14.0.0",
-    "eslint": "^8.13.0",
-    "eslint-config-prettier": "^9.0.0",
-    "license-cop": "^1.6.2",
-    "serve": "^14.2.3",
-    "typescript": "^5.0.0"
+    "cspell": "^8.17.3",
+    "cypress": "^14.0.3",
+    "license-cop": "^1.8.0",
+    "serve": "^14.2.4",
+    "typescript": "^5.7.3"
   }
 }

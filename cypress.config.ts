@@ -13,10 +13,6 @@ export default defineConfig({
     supportFile: "e2e/support/e2e.ts",
     specPattern: "e2e/**/*.spec.ts",
 
-    setupNodeEvents(on, config) {
-      on;
-      config;
-      // implement node event listeners here
-    }
+    setupNodeEvents(_on, _config) {}
   }
 });
