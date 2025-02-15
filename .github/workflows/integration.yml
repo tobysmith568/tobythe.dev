@@ -1,4 +1,5 @@
 name: Continuous Integration
+run-name: Continuous Integration for ${{ (github.event.pull_request.number && format('PR {0}', github.event.pull_request.number)) || github.ref_name }}
 
 on:
   push:
