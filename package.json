@@ -27,7 +27,7 @@
     "@license-cop/permissive": "^1.8.0",
     "@tobysmith568/eslint-config": "^2.3.0",
     "@tobysmith568/prettier-config": "^2.2.1",
-    "cspell": "^8.17.3",
+    "cspell": "^9.0.0",
     "cypress": "^14.0.3",
     "license-cop": "^1.8.0",
     "serve": "^14.2.4",
