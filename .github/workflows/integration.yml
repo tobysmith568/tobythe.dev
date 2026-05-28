@@ -87,7 +87,7 @@ jobs:
         uses: tobysmith568/actions/.github/actions/checkout-pnpm-project@main
 
       - name: Run E2E Tests
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7.3.0
         with:
           browser: ${{ matrix.browser.value }}
           start: npm start
